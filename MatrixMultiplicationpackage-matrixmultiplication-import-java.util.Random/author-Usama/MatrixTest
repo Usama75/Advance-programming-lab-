@@ -1,0 +1,67 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package matrixmultiplication;
+
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+/**
+ *
+ * @author Usama
+ */
+public class MatrixTest {
+    
+    public MatrixTest() {
+    }
+    
+    @BeforeClass
+    public static void setUpClass() {
+    }
+    
+    @AfterClass
+    public static void tearDownClass() {
+    }
+
+    
+    @Test
+    public void testStandardmatrixmultiply() {
+        System.out.println("Standardmatrixmultiply");
+        int drA = 2;
+        int dcA = 2;
+        int dcB = 2;
+        int[][] matrixA = {{1,1},{1,1}};
+        int[][] matrixB = {{1,1},{1,1}};
+     
+        int[][] expResult = {{2,2},{2,2}};
+        Matrix m1 = new Matrix(matrixA,matrixB);
+        int[][] result = m1.Standardmatrixmultiply(drA, dcA, dcB);
+        assertArrayEquals(expResult, result);
+        
+        
+    }
+
+    /**
+     * Test of multiply method, of class Matrix.
+     */
+    @Test
+    public void testMultiply() {
+        System.out.println("multiply");
+        int[][] matrixA = {{1,1},{1,1}};
+        int[][] matrixB = {{1,1},{1,1}};
+        int[][] expResult = {{2,2},{2,2}};
+        
+        Matrix m1 = new Matrix(matrixA,matrixB);
+        int[][] result = m1.multiply(m1.matrixA,m1.matrixB);
+        assertArrayEquals(expResult, result);
+    }
+
+    /**
+     * Test of sub method, of class Matrix.
+     */
+   
+}
